@@ -13,6 +13,7 @@ from m209.converter import M209_ALPHABET_LIST
 from m209.data import KEY_WHEEL_DATA
 
 CIPHER_TABLE = list(reversed(string.ascii_uppercase))
+N_INDICATOR_LETTERS = 10  # system indicator (2), external message indicator (6), key-list indicator (2)
 
 
 def _create_indicators(proc):
@@ -158,7 +159,10 @@ class EncryptSorted:
             """ Appends the Keystream if needed """
             if self.append_keystream:
                 keystream = []
-                for p, c in zip(plaintext.replace(" ", "Z"), ciphertext.replace(" ", "")):
+                # StdProcedure.encrypt() returns the full message: 10 indicator letters,
+                # the ciphertext, and the 10 indicator letters again. Use only the ciphertext.
+                cipher_only = ciphertext.replace(" ", "")[N_INDICATOR_LETTERS:]
+                for p, c in zip(plaintext.replace(" ", "Z"), cipher_only):
                     p = string.ascii_uppercase.index(p)
                     c = CIPHER_TABLE.index(c)
                     keystream.append((p-c) % 26)
