@@ -5,7 +5,7 @@ Sixteen changes, P1–P16, in page order. Severity: **E** = error of fact; **C**
 ### P1 – Abstract: "131 models" (C)
 - **Where:** p. 1, left column, Abstract, lines 13–16 of the abstract (counted from "This paper introduces").
 - **Before:** "Thus, to recover all the 131 pins, we utilize 131 models each solving a binary classification problem."
-- **After:** "Each model solves a binary classification problem. In this paper, the 26 models for the pins of the first wheel were trained and evaluated; the other wheels were not attempted."
+- **After:** "Each model solves a binary classification problem. The available files document training and evaluation of the 26 models for the pins of the first wheel."
 
 ### P2 – Abstract: input lengths (E)
 - **Where:** p. 1, left column, Abstract, lines 16–18.
@@ -15,7 +15,7 @@ Sixteen changes, P1–P16, in page order. Severity: **E** = error of fact; **C**
 ### P3 – Abstract: accuracies (E)
 - **Where:** p. 1, left column, Abstract, lines 22–27.
 - **Before:** "…achieved the following accuracies in recovering the pins of the first wheel of the machine: approximately 71% for 52-characters sequences, 88% for 104-characters, 96% for 200-characters."
-- **After:** "…achieved the following average accuracies in recovering the pins of the first wheel of the machine, on a test set with equal numbers of keys per key class: about 72 % for inputs of 52 values, 88 % for 104 and 97 % for 200. On keys drawn as in the 1944 rules, the accuracy is lower (training logs: about 65 % for 52 and 77 % for 104 values)."
+- **After:** "…achieved the following average accuracies in recovering the pins of the first wheel of the machine, on a test set grouped by key class: about 72 % for inputs of 52 values, 88 % for 104 and 97 % for 200."
 
 ### P4 – Abstract: other wheels (C)
 - **Where:** p. 1, left column, Abstract, lines 29–30.
@@ -35,7 +35,7 @@ Sixteen changes, P1–P16, in page order. Severity: **E** = error of fact; **C**
 ### P7 – Section 4: 131 classifiers (C)
 - **Where:** p. 2, right column, Section 4, lines 9–12 of the section (column lines 39–42).
 - **Before:** "Therefore, 131 binary classifier models that share the same ANN architecture are used to predict the states of all pins."
-- **After:** "Therefore, 131 binary classifier models that share the same ANN architecture would predict the states of all pins. In this paper, only the 26 models for the first wheel were trained and evaluated."
+- **After:** "Therefore, 131 binary classifier models that share the same ANN architecture would predict the states of all pins. The available files document training and evaluation of the 26 models for the first wheel."
 
 ### P8 – Section 4: definition of equivalent keys (M)
 - **Where:** p. 2, right column, Section 4, lines 13–15 of the section (column lines 43–45).
@@ -55,13 +55,13 @@ Sixteen changes, P1–P16, in page order. Severity: **E** = error of fact; **C**
 ### P11 – Section 5: other wheels (C)
 - **Where:** p. 3, right column, Section 5, first paragraph, last sentence (lines 8–9 of the section).
 - **Before:** "The results for the other wheels are marginally better."
-- **After:** "The other wheels were not trained or evaluated."
+- **After:** "The available files do not let us verify the earlier results for the smaller wheels."
 
 ### P12 – Section 5: test set (E)
 - **Where:** p. 3, right column, Section 5, lines 10–11.
 - **Before:** "For testing, we generated 1000 random keys for each of the key classes…"
-- **After:** "For testing, we generated up to 1000 random keys for each of the 103 key classes (99,903 tests in total; seven classes have fewer than 1000)…"
-- **Add at the end of that paragraph:** "Since every class has about the same number of tests, the averages below weight rare and common classes equally; they do not describe keys drawn as in the 1944 rules."
+- **After:** "For testing, we generated up to 1000 random keys for each of the 103 key classes for the per-class table (99,903 tests in total; seven classes have fewer than 1000)…"
+- **Add at the end of that paragraph:** "The per-class table uses up to 1000 tests per class. The overall figures pool the test keys across classes."
 
 ### P13 – Section 5: the 13-lug example (E)
 - **Where:** p. 3, right column, Section 5, lines 19–22, and footnote 6.
@@ -72,12 +72,12 @@ Sixteen changes, P1–P16, in page order. Severity: **E** = error of fact; **C**
 ### P14 – Section 5: averages and the effect of length (E, C)
 - **Where:** p. 3, right column, last line ("In"), continued on p. 4, left column, lines 1–7 below Figure 3.
 - **Before:** "In terms of average accuracy, sequences of 52 characters yield 71%, those with 104 characters reach 88%, and for sequences encompassing 200 characters, the accuracy stands at 96%. This behavior was expected because longer displacement sequences carry more information and the average accuracy therefore increases."
-- **After:** "In terms of average accuracy over the key classes, sequences of 52 values yield 72 %, those with 104 values reach 88 %, and for sequences of 200 values, the accuracy stands at 97 %. Longer sequences carry more information. However, the three lengths were also trained with different acceptance thresholds (each model was retrained until its test accuracy exceeded 0.62, 0.77 or 0.88, depending on the length) and, according to the published code, different network widths. The size of the increase can therefore not be attributed to length alone."
+- **After:** "In terms of average accuracy over the test keys, sequences of 52 values yield 72 %, those with 104 values reach 88 %, and for sequences of 200 values, the accuracy stands at 97 %. Longer inputs gave higher accuracy. The available records do not show a comparison where length was the only setting changed."
 
 ### P15 – Table 1 and its caption (E)
 - **Where:** p. 4, right column, Table 1 (lines 23–42), and the reference to it on p. 4, left column, lines 11–13 below Figure 3 ("The results related … are shown in Table 1.").
 - **Before:** the published Table 1.
-- **After:** replace the table with the values of the evaluation run in notebook #8, the run behind Figure 2 (`check6_table1_from_notebook8.py`). The values are rounded half up; `*` marks the 63 changed cells (`*` is not part of the table).
+- **After:** replace the table with the values saved in notebook #8 (`check6_table1_from_notebook8.py`). The published values are very close. A separate run with different randomly generated or sampled test data could explain the difference. The values are rounded half up; `*` marks the 63 changed cells (`*` is not part of the table).
 
 ```
 N\O    0    1    2    3    4    5    6    7    8    9   10   11   12
@@ -98,7 +98,7 @@ N\O    0    1    2    3    4    5    6    7    8    9   10   11   12
 ```
 
 - **Caption, before:** "Table 1: Mean accuracy in % for the different number of non-shared lugs (represented by rows) and overlaps (represented by columns). These results are for sequences of 52 characters long."
-- **Caption, after:** "Table 1: Mean accuracy in % for the different number of non-shared lugs (rows) and overlaps (columns), for input sequences of 52 values (42 keystream values), from the same evaluation run as Figure 2. Each cell is based on 1000 tests, except NS=0/OV=9–12 (568, 375, 602, 202), NS=1/OV=11–12 (957, 416) and NS=2/OV=11 (783)."
+- **Caption, after:** "Table 1: Mean accuracy in % for the different number of non-shared lugs (rows) and overlaps (columns), for input sequences of 52 values (42 keystream values), from the per-class results saved in notebook #8. Each cell is based on 1000 tests, except NS=0/OV=9–12 (568, 375, 602, 202), NS=1/OV=11–12 (957, 416) and NS=2/OV=11 (783)."
 - **Note on the count:** earlier documents count 62 differing cells (61 lower, 1 higher). The difference is a single cell, NS=5/OV=0 = 66.50 %. Python's `round()` gives 66 there, the same as the published table; conventional rounding gives 67. So 63 cells differ.
 
 ### P16 – Conclusion (C)

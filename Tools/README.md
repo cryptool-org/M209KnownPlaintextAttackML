@@ -1,3 +1,5 @@
+> HistoCrypt 2024 correction. Read the [known issues](../KNOWN_ISSUES.md) and the [root README](../README.md) before using these historical instructions. The corrected exporters produce payload displacements. Use the original input format with the archived models.
+
 # Overview of Notebooks
 
 Below is an overview of each notebook contained in this repository. It is recommended to follow the notebooks in their numerical order to ensure a seamless experience and understanding of the entire pipeline.
