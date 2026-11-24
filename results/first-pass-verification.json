@@ -1,0 +1,29 @@
+{
+  "scope": "Wheel 1, one ten-epoch model per pin at 52, 104 and 200 genuine displacements. All 26 pins at each length.",
+  "archived_test_cases": 102976,
+  "verified_predictions_and_scores": 78,
+  "method": "Recomputed from saved probabilities and archived labels. Every reported model is the final-epoch model.",
+  "lengths": {
+    "52": {
+      "1": {
+        "verified_models": 26,
+        "correct_pin_predictions": 2014964,
+        "external_accuracy_percent": 75.25891021657026
+      }
+    },
+    "104": {
+      "1": {
+        "verified_models": 26,
+        "correct_pin_predictions": 2372943,
+        "external_accuracy_percent": 88.62942672228331
+      }
+    },
+    "200": {
+      "1": {
+        "verified_models": 26,
+        "correct_pin_predictions": 2583722,
+        "external_accuracy_percent": 96.50202287612946
+      }
+    }
+  }
+}
